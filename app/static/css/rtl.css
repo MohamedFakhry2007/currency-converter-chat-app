@@ -1,0 +1,70 @@
+/* RTL specific styles for Arabic language support */
+
+/* Adjust input field for RTL */
+#userInput {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Flip user and bot message positioning */
+.user-message {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.bot-message {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+/* Adjust message bubble shapes */
+.user-message .message-content {
+    border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+}
+
+.bot-message .message-content {
+    border-radius: var(--radius-md) 0 var(--radius-md) var(--radius-md);
+}
+
+/* Fix send button icon direction */
+#sendButton svg {
+    transform: scaleX(-1);
+}
+
+/* Adjust spacing for Arabic text */
+body {
+    letter-spacing: 0;
+    word-spacing: 0.05em;
+}
+
+/* Improve readability for Arabic numerals */
+.amount {
+    font-feature-settings: "tnum";
+}
+
+/* Adjust currency symbol positions */
+.currency-symbol-end {
+    margin-right: var(--spacing-xs);
+}
+
+.currency-symbol-start {
+    margin-left: var(--spacing-xs);
+}
+
+.input-wrapper {
+    flex-direction: row-reverse;
+}
+
+#sendButton {
+    padding-left: 0;
+}
+
+.conversion-result {
+    border-left: none;
+    border-right: 3px solid var(--color-primary);
+}
+
+/* Loading animation */
+.loading-dots {
+    flex-direction: row-reverse;
+}

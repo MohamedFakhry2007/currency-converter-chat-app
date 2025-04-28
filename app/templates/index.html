@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محوّل العملات - محادثة ذكية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rtl.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="شعار محوّل العملات" class="logo">
+                <h1>محوّل العملات</h1>
+            </div>
+            <p class="app-subtitle">محادثة ذكية لتحويل العملات باللغة العربية</p>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>مرحباً! أنا مساعدك لتحويل العملات. يمكنك سؤالي عن تحويل أي عملة بلغة طبيعية. مثال: "حوّل 100 دولار إلى جنيه مصري" أو "كم يساوي 50 يورو بالدولار؟"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chatForm">
+                    <div class="input-wrapper">
+                        <input type="text" id="userInput" placeholder="اكتب رسالتك هنا..." autocomplete="off">
+                        <button type="submit" id="sendButton">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <div class="currency-shortcuts">
+            <h3>تحويلات سريعة</h3>
+            <div class="shortcuts-grid">
+                <button class="shortcut-btn" data-query="حول 1 دولار إلى يورو">دولار → يورو</button>
+                <button class="shortcut-btn" data-query="حول 1 دولار إلى جنيه مصري">دولار → جنيه مصري</button>
+                <button class="shortcut-btn" data-query="كم يساوي 100 يورو بالدولار؟">يورو → دولار</button>
+                <button class="shortcut-btn" data-query="كم يساوي 100 جنيه مصري بالدولار؟">جنيه مصري → دولار</button>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <p>تم تطويره باستخدام تقنية Google Gemini AI &copy; <span id="currentYear"></span></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
